@@ -23,8 +23,7 @@ client.on("message", msg => {
 		}
 	}
 	if(msg.content.split(" ")[0] === ">count") {
-		let value = async () => {return await axios.get(process.env.myspcalapi, {headers: {"usertype": "bot"}})} // if you wondering what that api is go look at my other repo
-		value().then(result => msg.channel.send(result.headers.number)) // i feel as if ive undermined the point of doing async like that but i dont understand it throughly enough
+		axios.get(process.env.myspcalapi, {headers: {"usertype": "bot"}}).then(result => msg.channel.send(result.headers.number)) // if you wondering what that api is go look at my other repo
 	}
 })
 
