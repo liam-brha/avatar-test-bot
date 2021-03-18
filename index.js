@@ -28,7 +28,7 @@ client.on("message", msg => {
 	}
 	if(msg.content.split(" ")[0] === ">k") {
 		let value = async () => {return await axios.get("https://skolwebapp.herokuapp.com/endpointTest")}
-		value().then(result => console.log(result))
+		value().then(result => console.log(result.headers.number))
 	}
 })
 
