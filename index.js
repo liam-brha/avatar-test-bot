@@ -24,7 +24,7 @@ client.on("message", msg => {
 	}
 	if(msg.content.split(" ")[0] === ">count") {
 		axios.get(process.env.myspcalapi, {headers: {"usertype": "bot"}}).then(result => msg.channel.send(result.headers.number)) // if you wondering what that api is go look at my other repo
-	};
+	}
 	if(msg.content.split(" ")[0] === ">log") {
 		var array = []
 		msg.channel.messages.fetch({limit: 100}).then(result => {
